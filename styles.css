@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.86rem;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow-y: hidden;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bg {
+    background-image: url(/assets/bg.gif);
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+.grid3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.topbar {
+    height: 26px;
+    width: 100vw;
+    backdrop-filter: blur(14px);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    justify-items: center;
+    align-items: center;
+    padding: 0px 10px;
+}
+.left {
+    justify-self: left;
+}
+.right {
+    justify-self: right; 
+}
+.icon-box {
+    background-color: pink;
+    height: 20px;
+    width: fit-content;
+    padding: 0 5px;
+    border-radius: 10px;
+    margin: 3px;
+}
+.icon {
+    height: 10px;
+    width: auto;
+    user-select: none;
+}
+.icon-box:has(>.menu-icon) {
+    background-color: rgb(0, 196, 196);
+}
+.icon-box:has(>.menu-icon):hover {
+    background-color: rgb(0, 150, 150);
+}
+.icon-box:has(>.wifi-icon) {
+    background-color: pink;
+}
+.icon-box:has(>.wifi-icon):hover {
+    background-color: rgb(212, 147, 158);
+}
+.icon-box:has(>.bluetooth-icon) {
+    background-color: palevioletred;
+}
+.icon-box:has(>.bluetooth-icon):hover {
+    background-color: rgb(185, 97, 126);
+}
+.icon-box:has(>.battery-icon) {
+    background-color: purple;
+}
+.icon-box:has(>.battery-icon):hover {
+    background-color: rgb(104, 0, 104);
+}
+.clock {
+    position: absolute;
+    text-align: center;
+    height: inherit;
+    width: inherit;
+    color: white;
+    user-select: none;
+}
+.clock-bg {
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 20px;
+    margin: 1rem;
+}
+.clock h1 {
+    font-size: 5rem;
+}
+.clock h3 {
+    font-size: 1.4rem;
+}
+.clock h2 {
+    font-size: 1.5rem;
+}
+ 
+  
+  
