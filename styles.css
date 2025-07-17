@@ -153,6 +153,9 @@ body::-webkit-scrollbar {
     height: 100%;
     border-radius: 4px;
     backdrop-filter: blur(4px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-color: pink rgba(0, 0, 0, 0.288);
 }
 .smol-windows {
     gap: 8px;
@@ -211,4 +214,49 @@ body::-webkit-scrollbar {
 }
 .for-websites.active {
     display: flex;
+}
+.for-quiz-web {
+    display: none;
+}
+.for-quiz-web.active {
+    display: flex;
+}
+.for-ken-web {
+    display: none;
+}
+.for-ken-web.active {
+    display: flex;
+}
+.for-exp-web {
+    display: none;
+}
+.for-exp-web.active {
+    display: flex;
+}
+.for-linux-web {
+    display: none;
+}
+.for-linux-web.active {
+    display: flex;
+}
+.for-m4d-web {
+    display: none;
+}
+.for-m4d-web.active {
+    display: flex;
+}
+.content-wrapper {
+    width: 100%;
+    height: fit-content;
+    padding: 2rem;
+}
+.content-group {
+    width: 100%;
+}
+iframe {
+    border: none;
+    border-radius: 8px;
+    aspect-ratio: 16/9;
+    width: 130%;
+    scale: 0.8;
 }
