@@ -25,6 +25,21 @@ body::-webkit-scrollbar {
     justify-content: center;
     align-items: center;
 }
+.loading {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    pointer-events: none;
+    transition: opacity 1s ease;
+}
+.loading img {
+    width: 200px;
+    height: auto;
+}
 .bg {
     background-image: url(/assets/bg.gif);
     background-position: center;
@@ -45,6 +60,7 @@ body::-webkit-scrollbar {
     justify-items: center;
     align-items: center;
     padding: 0px 10px;
+    text-align: center;
 }
 .left {
     justify-self: left;
@@ -445,6 +461,12 @@ iframe {
     }
     .big-placeholder {
         scale: 0.9;
+    }
+    #clock {
+        font-size: .6rem;
+    }
+    .big-placeholder pre {
+        scale: 0.8;
     }
 }
 @media screen and (max-width: 380px){

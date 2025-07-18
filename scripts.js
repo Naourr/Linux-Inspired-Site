@@ -1,3 +1,12 @@
+const loading = document.querySelector('.loading');
+
+window.addEventListener('load', () => {
+    loading.style.opacity = '0';
+});
+
+
+
+
 const big_placeholder = document.querySelector('.big-placeholder');
 const smol_placeholder = document.querySelector('.smol-placeholder');
 
