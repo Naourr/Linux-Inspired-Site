@@ -193,7 +193,6 @@ body::-webkit-scrollbar {
     scrollbar-width: thin;
     scrollbar-color: pink rgba(0, 0, 0, 0.288);
 }
-
 .folders-wrapper {
     display: flex;
     flex-direction: row;
@@ -339,7 +338,6 @@ video {
     width: 100%;
     border-radius: 8px;
 }
-
 .content-wrapper {
     width: 100%;
     height: fit-content;
@@ -363,7 +361,6 @@ iframe {
     aspect-ratio: 16/9;
     width: 120%;
 }
-
 .big-placeholder, .smol-placeholder {
     color: white;
     padding: 2rem;
@@ -381,7 +378,6 @@ iframe {
     height: auto;
     aspect-ratio: auto;
 }
-
 .big-placeholder.active {
     display: flex;
 }
