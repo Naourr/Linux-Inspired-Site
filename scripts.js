@@ -15,31 +15,22 @@ openbtn.addEventListener('click', () => {
 });
 
 const folders = document.querySelectorAll('.folder-area');
-const items = document.querySelectorAll('.item');
-const content_groups = document.querySelectorAll('.content-group');
-
 folders.forEach(folder => {
     folder.addEventListener('click', () => {
         const name = folder.dataset.folder;
         const target = document.querySelector(`.for-${name}`);
         if (target) {
-            // items.forEach(item => {
-            //     item.classList.remove('active');
-            // });
             target.classList.toggle('active');
         }
     });
 });
 
-
+const items = document.querySelectorAll('.item');
 items.forEach(item => {
     item.addEventListener('click', () => {
         const name = item.dataset.content;
         const target = document.querySelector(`.for-${name}`);
         if (target) {
-            // content_groups.forEach(content => {
-            //     content.classList.remove('active');
-            // });
             target.classList.toggle('active');
         }
     });

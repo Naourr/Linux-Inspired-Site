@@ -117,7 +117,7 @@ body::-webkit-scrollbar {
 .open-area {
     position: fixed;
     bottom: 1rem;
-    right: 1.5rem;
+    right: 1rem;
     color: white;
     background-color: transparent;
     width: fit-content;
@@ -168,7 +168,12 @@ body::-webkit-scrollbar {
     width: 100%;
     height: 50%;
     border-radius: 4px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: pink rgba(0, 0, 0, 0.288);
 }
+
 .folders-wrapper {
     display: flex;
     flex-direction: row;
@@ -245,18 +250,155 @@ body::-webkit-scrollbar {
 .for-m4d-web.active {
     display: flex;
 }
+.for-web-apps {
+    display: none;
+}
+.for-web-apps.active {
+    display: flex;
+}
+.for-pink-calc {
+    display: none;
+}
+.for-pink-calc.active {
+    display: flex;
+}
+.for-tictactoe {
+    display: none;
+}
+.for-tictactoe.active {
+    display: flex;
+}
+.for-games {
+    display: none;
+}
+.for-games.active {
+    display: flex;
+}
+.for-shooter {
+    display: none;
+}
+.for-shooter.active {
+    display: flex;
+}
+.for-visual-novel {
+    display: none;
+}
+.for-visual-novel.active {
+    display: flex;
+}
+.for-guitar {
+    display: none;
+}
+.for-guitar.active {
+    display: flex;
+}
+.for-playing-god {
+    display: none;
+}
+.for-playing-god.active {
+    display: flex;
+}
+.for-abc {
+    display: none;
+}
+.for-abc.active {
+    display: flex;
+}
+.for-the-worst {
+    display: none;
+}
+.for-the-worst.active {
+    display: flex;
+}
+.video-box {
+    width: 100%;
+    height: 100%;
+}
+video {
+    aspect-ratio: 16/9;
+    width: 100%;
+    border-radius: 8px;
+}
+
 .content-wrapper {
     width: 100%;
     height: fit-content;
     padding: 2rem;
 }
+.content-wrapper a {
+    text-align: center;
+}
 .content-group {
+    width: 100%;
+    height: fit-content;
+}
+.iframe-box {
+    height: fit-content;
+    transform: scale(0.8);
     width: 100%;
 }
 iframe {
     border: none;
     border-radius: 8px;
     aspect-ratio: 16/9;
-    width: 130%;
-    scale: 0.8;
+    width: 120%;
 }
+
+@media screen and (max-width: 1000px) {
+    iframe {
+        aspect-ratio: 1/1;
+    }
+}
+@media screen and (max-width: 720px) {
+    iframe {
+        aspect-ratio: 2/3;
+    }
+}
+@media (orientation: portrait) {
+    .filescreen {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .big-window {
+        width: 100%;
+        height: 70%;
+    }
+    .smol-windows {
+        flex-direction: row;
+        width: 100%;
+        height: 30%;
+        padding-bottom: 8px;
+    }
+    .smol-window1, .smol-window2 {
+        width: 50%;
+        height: 100%;
+    }
+    iframe {
+        aspect-ratio: 16/9;
+    }
+}
+@media screen and (max-width: 550px){
+    iframe {
+        aspect-ratio: 10/7;
+    }
+}
+@media screen and (max-width: 470px){
+    iframe {
+        aspect-ratio: 1/1;
+    }
+}
+@media screen and (max-width: 380px){
+    .iframe-box {
+        scale: 0.6;
+    }
+    iframe {
+        aspect-ratio: 5/6;
+        width: 200%;
+    }
+}
+@media screen and (max-width: 330px){
+    iframe {
+        aspect-ratio: 3/5;
+    }
+}
+
