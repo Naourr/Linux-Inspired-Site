@@ -120,19 +120,16 @@ body::-webkit-scrollbar {
     padding: 2rem;
     border-radius: 20px;
     margin: 1rem;
+    font-size: 2rem;
 }
-.clock h1 {
+.clock #hour, .clock #minute, .clock #second {
     font-size: 5rem;
 }
-.clock h3 {
+.clock #day {
     font-size: 1.4rem;
 }
-.clock h2 {
+.clock #month, .clock #weekday {
     font-size: 1.5rem;
-}
-.clock p {
-    margin-top: 1rem;
-    font-size: .6rem;
 }
 .open-area {
     position: fixed;
