@@ -6,9 +6,10 @@
     font-size: 0.86rem;
 }
 body {
-    height: 100vh;
+    height: 100dvh;
     width: 100vw;
     overflow-y: hidden;
+    background-color: black;
 }
 body::-webkit-scrollbar {
     display: none;
@@ -31,10 +32,10 @@ body::-webkit-scrollbar {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     background-color: black;
     pointer-events: none;
-    transition: opacity 1s ease;
+    transition: opacity 3.6s ease-out;
 }
 .loading img {
     width: 200px;
@@ -153,16 +154,16 @@ body::-webkit-scrollbar {
     height: calc(100% - 26px);
     width: 100%;
     position: fixed;
-    bottom: -200vh;
+    bottom: -100dvh;
     right: 0;
     background-color: rgba(0, 0, 0, 0);
     gap: 8px;
     padding: 8px;
-    transition: bottom 0.5s ease-out;
+    transition: all .6s ease;
 }
 .filescreen.active {
     bottom: 0;
-    transition: bottom 0.5s ease-out;
+    transition: all .6s ease;
 }
 .big-window {
     background-color: rgba(0, 0, 0, 0.76);
@@ -189,6 +190,9 @@ body::-webkit-scrollbar {
     overflow-x: hidden;
     scrollbar-width: thin;
     scrollbar-color: pink rgba(0, 0, 0, 0.288);
+}
+.smol-window2 {
+    padding: 8px;
 }
 .folders-wrapper {
     display: flex;
