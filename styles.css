@@ -42,11 +42,16 @@ body::-webkit-scrollbar {
     height: auto;
 }
 .bg {
-    background-image: url(/assets/bg.gif);
-    background-position: center;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+.bg video {
+   aspect-ratio: auto;
+   height: 100%;
+   width: auto;
 }
 .grid3 {
     display: grid;
@@ -112,8 +117,8 @@ body::-webkit-scrollbar {
 .clock {
     position: absolute;
     text-align: center;
-    height: inherit;
-    width: inherit;
+    height: 100%;
+    width: 100%;
     color: white;
     user-select: none;
     transition: opacity 0.3s ease;
@@ -157,7 +162,7 @@ body::-webkit-scrollbar {
     height: calc(100% - 26px);
     width: 100%;
     position: fixed;
-    bottom: -101vh;
+    bottom: -100vh;
     right: 0;
     background-color: rgba(0, 0, 0, 0);
     gap: 8px;
