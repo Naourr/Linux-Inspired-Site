@@ -3,22 +3,23 @@ window.addEventListener('load', () => {
     loading.style.opacity = '0';
 });
 
+const big_window = document.querySelector('.content-wrapper');
 const big_placeholder = document.querySelector('.big-placeholder');
+const smol_window1 = document.querySelector('.list-wrapper');
 const smol_placeholder = document.querySelector('.smol-placeholder');
+
 document.addEventListener('click', () => {
-    const big_window = document.querySelector('.content-wrapper');
-    if (allChildrenHidden(big_window)) {
-        big_placeholder.classList.add('active');
-    } else {
-        big_placeholder.classList.remove('active');
-    }
-    const smol_window1 = document.querySelector('.list-wrapper');
-    if (allChildrenHidden(smol_window1)) {
-        smol_placeholder.classList.add('active');
-    } else {
-        smol_placeholder.classList.remove('active');
-    }
+    placeholder(big_placeholder, big_window);
+    placeholder(smol_placeholder, smol_window1);
 });
+
+function placeholder(placeholder, target) {
+    if (allChildrenHidden(target)) {
+        placeholder.classList.add('active');
+    } else {
+        placeholder.classList.remove('active');
+    }
+}
 
 const openbtn = document.querySelector('.open');
 const filescreen = document.querySelector('.filescreen');
@@ -34,36 +35,31 @@ openbtn.addEventListener('click', () => {
 });
 
 const folders = document.querySelectorAll('.folder-area');
-folders.forEach(folder => {
-    folder.addEventListener('click', () => {
-        const name = folder.dataset.folder;
-        const target = document.querySelector(`.for-${name}`);
-        if (!allChildrenHidden(target.parentNode)) {
-                hideAllSiblings(target);
-            } 
-            target.classList.toggle('active');
-    });
-});
+ActivateWindowOnButtonClick(folders, 'folder');
 
 const items = document.querySelectorAll('.item');
-items.forEach(item => {
-    item.addEventListener('click', () => {
-        const name = item.dataset.content;
-        const target = document.querySelector(`.for-${name}`);
-        if (target) {
-            if (!allChildrenHidden(target.parentNode)) {
-                hideAllSiblings(target);
-            } 
-            target.classList.toggle('active');
-        }
-    });
-});
+ActivateWindowOnButtonClick(items, 'content');
 
-const smol_window1 = document.querySelector('.list-wrapper');
+function ActivateWindowOnButtonClick(buttonGroup, dataGroup) {
+    buttonGroup.forEach(buttonG => {
+        buttonG.addEventListener('click', () => {
+            const name = buttonG.dataset[dataGroup];
+            const target = document.querySelector(`.for-${name}`);
+            if (target) {
+                if (!allChildrenHidden(target.parentNode)) {
+                    hideAllSiblings(target);
+                } 
+                target.classList.toggle('active');
+            }
+        });
+    });
+}
+
 folders.forEach(folder => {
     folder.addEventListener('click', () => {
         if (allChildrenHidden(smol_window1)) {
-            document.querySelectorAll('.content-group.active').forEach(content => {
+            const contentsActive = document.querySelectorAll('.content-group.active')
+            contentsActive.forEach(content => {
                 content.classList.remove('active');
             });
         }
