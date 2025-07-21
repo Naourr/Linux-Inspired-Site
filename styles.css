@@ -474,7 +474,7 @@ iframe {
     .big-placeholder {
         scale: 0.9;
     }
-    #clock {
+    #clock, #clockbottom {
         font-size: .6rem;
     }
     .big-placeholder pre {
