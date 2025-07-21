@@ -6,7 +6,7 @@
     font-size: 0.86rem;
 }
 body {
-    height: 104vh;
+    height: calc(100vh + 27px);
     width: 100vw;
     /* overflow-y: hidden; */
     background-color: black;
@@ -67,7 +67,7 @@ body::-webkit-scrollbar {
     align-items: center;
     padding: 0px 10px;
     text-align: center;
-    position: sticky;
+    position: relative;
     top: 0;
     left: 0;
 }
@@ -159,7 +159,7 @@ body::-webkit-scrollbar {
     font-size: .7rem;
 }
 .filescreen {
-    height: calc(100% - 26px);
+    height: calc(100vh - 26px);
     width: 100%;
     position: fixed;
     bottom: -100vh;
@@ -167,12 +167,15 @@ body::-webkit-scrollbar {
     background-color: rgba(0, 0, 0, 0);
     gap: 8px;
     padding: 8px;
-    transition: all .6s ease;
+    transition: bottom .6s ease;
+    transition: height 0.3s ease;
 }
 .filescreen.active {
     bottom: 0;
-    transition: all .6s ease;
+    transition: bottom .6s ease;
+    transition: height 0.3s ease;
 }
+
 .big-window {
     background-color: rgba(0, 0, 0, 0.76);
     width: 60%;
@@ -418,7 +421,6 @@ iframe {
     bottom: 2rem;
     transition: bottom 0.3s ease;
 }
-
 @media screen and (max-width: 1000px) {
     iframe {
         aspect-ratio: 1/1;
