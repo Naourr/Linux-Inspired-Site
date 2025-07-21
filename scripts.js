@@ -84,19 +84,6 @@ function allChildrenHidden(parent) {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    const topbar = document.querySelector('.topbar');
-    const observer = new IntersectionObserver(([entry]) => {
-        if (!entry.isIntersecting) {
-            filescreen.style.height = '100vh';
-        } else {
-            filescreen.style.height = `calc(100vh - ${topbar.offsetHeight}px)`;
-        }
-    });
-    observer.observe(topbar);
-});
-
-
 function updateClock() {
     const now = new Date();
     const options = {
@@ -111,6 +98,7 @@ function updateClock() {
     };
     const formattedTime = now.toLocaleString('en-US', options);
     document.getElementById('clock').textContent = formattedTime;
+    document.getElementById('clockbottom').textContent = formattedTime;
 }
 
 updateClock();

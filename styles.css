@@ -6,7 +6,7 @@
     font-size: 0.86rem;
 }
 body {
-    height: calc(100vh + 27px);
+    height: calc(100vh + 1px);
     width: 100vw;
     /* overflow-y: hidden; */
     background-color: black;
@@ -67,7 +67,7 @@ body::-webkit-scrollbar {
     align-items: center;
     padding: 0px 10px;
     text-align: center;
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
 }
@@ -76,6 +76,10 @@ body::-webkit-scrollbar {
 }
 .right {
     justify-self: right; 
+}
+.bottombar {
+    position: absolute;
+    top: 100%;
 }
 .icon-box {
     background-color: pink;
@@ -162,17 +166,18 @@ body::-webkit-scrollbar {
     height: calc(100% - 26px);
     width: 100%;
     position: fixed;
-    bottom: -100vh;
+    top: 100vh;
     right: 0;
     background-color: rgba(0, 0, 0, 0);
     gap: 8px;
     padding: 8px;
-    transition: bottom .6s ease;
+    transition: top .6s ease;
     transition: height 0.3s ease;
 }
 .filescreen.active {
-    bottom: 0;
-    transition: bottom .6s ease;
+    position: absolute;
+    top: 26px;
+    transition: top .6s ease;
     transition: height 0.3s ease;
 }
 
