@@ -357,20 +357,20 @@ video {
 }
 .content-wrapper {
     width: 100%;
-    height: fit-content;
     padding: 2rem;
+    height: 100%;
 }
 .content-wrapper a {
     text-align: center;
 }
 .content-group {
     width: 100%;
-    height: fit-content;
+    height: 100%;
 }
 .iframe-box {
-    height: fit-content;
     transform: scale(0.8);
     width: 100%;
+    height: 100%;
 }
 iframe {
     border: none;
@@ -428,12 +428,12 @@ iframe {
 }
 @media screen and (max-width: 1000px) {
     iframe {
-        aspect-ratio: 1/1;
+        aspect-ratio: 3/2;
     }
 }
 @media screen and (max-width: 720px) {
     iframe {
-        aspect-ratio: 2/3;
+        aspect-ratio: 1/1;
     }
     .smol-placeholder img {
         width: 90%;
