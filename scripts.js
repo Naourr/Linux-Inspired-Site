@@ -84,7 +84,6 @@ function allChildrenHidden(parent) {
   });
 }
 
-// Cache DOM elements
 const elClock1 = document.getElementById('clock');
 const elClock2 = document.getElementById('clockbottom');
 const elWeekday = document.getElementById('weekday');
@@ -92,7 +91,7 @@ const elMonth = document.getElementById('month');
 const elDay = document.getElementById('day');
 const elHour = document.getElementById('hour');
 const elMinute = document.getElementById('minute');
-const elSecond = document.getElementById('second');
+// const elSecond = document.getElementById('second');
 
 function setTextIfChanged(el, value) {
     if (el && el.textContent !== value) {
@@ -114,13 +113,13 @@ function updateClock() {
 
     let hour = now.getHours();
     const minute = now.getMinutes().toString().padStart(2, '0');
-    const second = now.getSeconds().toString().padStart(2, '0');
+    // const second = now.getSeconds().toString().padStart(2, '0');
     const ampm = hour >= 12 ? 'PM' : 'AM';
 
     hour = hour % 12 || 12;
     const paddedHour = hour.toString().padStart(2, '0');
 
-    const fullTime = `${weekday}, ${month} ${day}, ${year}, ${paddedHour}:${minute} ${ampm}`;
+    const fullTime = `${weekday}, ${month} ${day}, ${year}`;
 
     setTextIfChanged(elClock1, fullTime);
     setTextIfChanged(elClock2, fullTime);
@@ -129,10 +128,10 @@ function updateClock() {
     setTextIfChanged(elDay, day);
     setTextIfChanged(elHour, paddedHour);
     setTextIfChanged(elMinute, minute);
-    setTextIfChanged(elSecond, second);
+    // setTextIfChanged(elSecond, second);
 }
 
-setInterval(updateClock, 1000);
+setInterval(updateClock, 5000);
 
 
 const icons = document.querySelectorAll('.icon');
