@@ -93,44 +93,31 @@ function updateClock() {
         day: 'numeric',
         hour: '2-digit',
         minute: '2-digit',
-        // second: '2-digit',
         hour12: true
     };
-    const formattedTime = now.toLocaleString('en-US', options);
-    document.getElementById('clock').textContent = formattedTime;
-    document.getElementById('clockbottom').textContent = formattedTime;
-}
+    const fullTime = now.toLocaleString('en-US', options);
 
-updateClock();
-setInterval(updateClock, 1000);
+    const clock1 = document.getElementById('clock');
+    const clock2 = document.getElementById('clockbottom');
 
-function updateClock1() {
-    const now = new Date();
+    if (clock1) clock1.textContent = fullTime;
+    if (clock2) clock2.textContent = fullTime;
 
     const weekday = now.toLocaleString('en-US', { weekday: 'short' });
     const month = now.toLocaleString('en-US', { month: 'short' });
     const day = now.getDate();
-    // const year = now.getFullYear(); 
+    let hour = now.getHours() % 12 || 12;
+    let minute = now.getMinutes().toString().padStart(2, '0');
+    let second = now.getSeconds().toString().padStart(2, '0');
 
-    let hour = now.getHours();
-    const minute = now.getMinutes().toString().padStart(2, '0');
-    const second = now.getSeconds().toString().padStart(2, '0');
-
-    hour = hour % 12;
-    hour = hour ? hour : 12;
-    hour = hour.toString().padStart(2, '0');
-
-    document.getElementById('weekday').textContent = weekday;
-    document.getElementById('month').textContent = month;
-    document.getElementById('day').textContent = day;
-    // document.getElementById('year').textContent = year;
-    document.getElementById('hour').textContent = hour;
-    document.getElementById('minute').textContent = minute;
-    document.getElementById('second').textContent = second;
+    if (document.getElementById('weekday')) document.getElementById('weekday').textContent = weekday;
+    if (document.getElementById('month')) document.getElementById('month').textContent = month;
+    if (document.getElementById('day')) document.getElementById('day').textContent = day;
+    if (document.getElementById('hour')) document.getElementById('hour').textContent = hour;
+    if (document.getElementById('minute')) document.getElementById('minute').textContent = minute;
+    if (document.getElementById('second')) document.getElementById('second').textContent = second;
 }
-
-updateClock1();
-setInterval(updateClock1, 1000);
+setInterval(updateClock, 1000);
 
 const icons = document.querySelectorAll('.icon');
 const alert = document.querySelector('.alert-wrapper');
