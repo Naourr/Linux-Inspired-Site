@@ -1,6 +1,18 @@
 const loading = document.querySelector('.loading');
 window.addEventListener('load', () => {
+    updateClock();
     loading.style.opacity = '0';
+});
+
+const icons = document.querySelectorAll('.icon');
+const alert = document.querySelector('.alert-wrapper');
+icons.forEach(icon => {
+    icon.addEventListener('click', () => {
+        alert.classList.add('active');
+        setTimeout(() => {
+            alert.classList.remove('active');
+        }, 2000);
+    });
 });
 
 const big_window = document.querySelector('.content-wrapper');
@@ -45,11 +57,45 @@ function ActivateWindowOnButtonClick(buttonGroup, dataGroup) {
         buttonG.addEventListener('click', () => {
             const name = buttonG.dataset[dataGroup];
             const target = document.querySelector(`.for-${name}`);
-            if (target) {
-                if (!allChildrenHidden(target.parentNode)) {
-                    hideAllSiblings(target);
-                } 
-                target.classList.toggle('active');
+            if (!target) return;
+
+            const parent = target.parentNode;
+            const siblings = Array.from(parent.children);
+
+            siblings.forEach(sibling => {
+                if (sibling !== target && sibling.classList.contains('active')) {
+                    sibling.classList.remove('active');
+
+                    const iframe = sibling.querySelector('iframe');
+                    if (iframe) iframe.removeAttribute('src');
+
+                    const sources = sibling.querySelectorAll('video source');
+                    sources.forEach(source => {
+                        source.removeAttribute('src');
+                        const video = source.closest('video');
+                        if (video) {
+                            video.load();
+                        }
+                    });
+                }
+            });
+            target.classList.toggle('active');
+
+            const isNowVisible = window.getComputedStyle(target).display !== 'none';
+            if (isNowVisible) {
+                const iframe = target.querySelector('iframe[data-src]');
+                if (iframe && !iframe.src) {
+                    iframe.src = iframe.dataset.src;
+                }
+
+                const sources = target.querySelectorAll('video source[data-src]');
+                sources.forEach(source => {
+                    if (!source.src) {
+                        source.src = source.dataset.src;
+                        const video = source.closest('video');
+                        if (video) video.load();
+                    }
+                });
             }
         });
     });
@@ -57,8 +103,8 @@ function ActivateWindowOnButtonClick(buttonGroup, dataGroup) {
 
 folders.forEach(folder => {
     folder.addEventListener('click', () => {
+        const contentsActive = document.querySelectorAll('.content-group.active');
         if (allChildrenHidden(smol_window1)) {
-            const contentsActive = document.querySelectorAll('.content-group.active')
             contentsActive.forEach(content => {
                 content.classList.remove('active');
             });
@@ -67,9 +113,9 @@ folders.forEach(folder => {
 });
 
 function hideAllSiblings(sibling) {
-  const parent = sibling.parentNode;
-  const children = Array.from(parent.children);
-  children.forEach(child => {
+    const parent = sibling.parentNode;
+    const children = Array.from(parent.children);
+    children.forEach(child => {
     if (child !== sibling && child.classList.contains('active')) {
         child.classList.remove('active');
     }
@@ -77,11 +123,11 @@ function hideAllSiblings(sibling) {
 }
 
 function allChildrenHidden(parent) {
-  const children = Array.from(parent.children);
-  return children.every(child => {
+    const children = Array.from(parent.children);
+    return children.every(child => {
     const style = window.getComputedStyle(child);
     return style.display === 'none';
-  });
+    });
 }
 
 const elClock1 = document.getElementById('clock');
@@ -132,15 +178,3 @@ function updateClock() {
 }
 
 setInterval(updateClock, 5000);
-
-
-const icons = document.querySelectorAll('.icon');
-const alert = document.querySelector('.alert-wrapper');
-icons.forEach(icon => {
-    icon.addEventListener('click', () => {
-        alert.classList.add('active');
-        setTimeout(() => {
-            alert.classList.remove('active');
-        }, 2000);
-    });
-});
