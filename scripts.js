@@ -84,40 +84,56 @@ function allChildrenHidden(parent) {
   });
 }
 
+// Cache DOM elements
+const elClock1 = document.getElementById('clock');
+const elClock2 = document.getElementById('clockbottom');
+const elWeekday = document.getElementById('weekday');
+const elMonth = document.getElementById('month');
+const elDay = document.getElementById('day');
+const elHour = document.getElementById('hour');
+const elMinute = document.getElementById('minute');
+const elSecond = document.getElementById('second');
+
+function setTextIfChanged(el, value) {
+    if (el && el.textContent !== value) {
+        el.textContent = value;
+    }
+}
+
 function updateClock() {
     const now = new Date();
-    const options = {
-        weekday: 'short',
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: true
-    };
-    const fullTime = now.toLocaleString('en-US', options);
 
-    const clock1 = document.getElementById('clock');
-    const clock2 = document.getElementById('clockbottom');
+    const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-    if (clock1) clock1.textContent = fullTime;
-    if (clock2) clock2.textContent = fullTime;
+    const weekday = weekdays[now.getDay()];
+    const month = months[now.getMonth()];
+    const day = now.getDate().toString();
+    const year = now.getFullYear();
 
-    const weekday = now.toLocaleString('en-US', { weekday: 'short' });
-    const month = now.toLocaleString('en-US', { month: 'short' });
-    const day = now.getDate();
-    let hour = now.getHours() % 12 || 12;
-    let minute = now.getMinutes().toString().padStart(2, '0');
-    let second = now.getSeconds().toString().padStart(2, '0');
+    let hour = now.getHours();
+    const minute = now.getMinutes().toString().padStart(2, '0');
+    const second = now.getSeconds().toString().padStart(2, '0');
+    const ampm = hour >= 12 ? 'PM' : 'AM';
 
-    if (document.getElementById('weekday')) document.getElementById('weekday').textContent = weekday;
-    if (document.getElementById('month')) document.getElementById('month').textContent = month;
-    if (document.getElementById('day')) document.getElementById('day').textContent = day;
-    if (document.getElementById('hour')) document.getElementById('hour').textContent = hour;
-    if (document.getElementById('minute')) document.getElementById('minute').textContent = minute;
-    if (document.getElementById('second')) document.getElementById('second').textContent = second;
+    hour = hour % 12 || 12;
+    const paddedHour = hour.toString().padStart(2, '0');
+
+    const fullTime = `${weekday}, ${month} ${day}, ${year}, ${paddedHour}:${minute} ${ampm}`;
+
+    setTextIfChanged(elClock1, fullTime);
+    setTextIfChanged(elClock2, fullTime);
+    setTextIfChanged(elWeekday, weekday);
+    setTextIfChanged(elMonth, month);
+    setTextIfChanged(elDay, day);
+    setTextIfChanged(elHour, paddedHour);
+    setTextIfChanged(elMinute, minute);
+    setTextIfChanged(elSecond, second);
 }
+
 setInterval(updateClock, 1000);
+
 
 const icons = document.querySelectorAll('.icon');
 const alert = document.querySelector('.alert-wrapper');
