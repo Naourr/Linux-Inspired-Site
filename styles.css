@@ -35,7 +35,7 @@ body::-webkit-scrollbar {
     height: 100vh;
     background-color: black;
     pointer-events: none;
-    transition: opacity 3.6s ease-out;
+    transition: opacity 1s ease-out;
 }
 .loading img {
     width: 200px;
