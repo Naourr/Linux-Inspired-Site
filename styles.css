@@ -286,6 +286,12 @@ body::-webkit-scrollbar {
 .for-m4d-web.active {
     display: flex;
 }
+.for-neo-web {
+    display: none;
+}
+.for-neo-web.active {
+    display: flex;
+}
 .for-web-apps {
     display: none;
 }
