@@ -8,7 +8,6 @@
 body {
     height: calc(100vh + 26px);
     width: 100vw;
-    /* overflow-y: hidden; */
     background-color: black;
 }
 body::-webkit-scrollbar {
@@ -48,7 +47,7 @@ body::-webkit-scrollbar {
     height: 100%;
     width: 100%;
 }
-.bg video {
+.bg img {
    aspect-ratio: auto;
    height: 100%;
    width: auto;
@@ -125,6 +124,7 @@ body::-webkit-scrollbar {
     width: 100%;
     color: white;
     user-select: none;
+    pointer-events: none;
     transition: opacity 0.3s ease;
 }
 .clock-bg {
@@ -346,21 +346,6 @@ body::-webkit-scrollbar {
 .for-abc.active {
     display: flex;
 }
-.for-the-worst {
-    display: none;
-}
-.for-the-worst.active {
-    display: flex;
-}
-.video-box {
-    width: 100%;
-    height: 100%;
-}
-video {
-    aspect-ratio: 16/9;
-    width: 100%;
-    border-radius: 8px;
-}
 .content-wrapper {
     width: 100%;
     padding: 2rem;
@@ -378,11 +363,20 @@ video {
     width: 100%;
     height: 100%;
 }
-iframe {
+iframe.website-iframe {
     border: none;
     border-radius: 8px;
     aspect-ratio: 16/9;
     width: 120%;
+}
+.video-box {
+    width: 100%;
+    height: 100%;
+}
+.video {
+    aspect-ratio: 16/9;
+    width: 100%;
+    border-radius: 8px;
 }
 .big-placeholder, .smol-placeholder {
     color: white;
@@ -433,12 +427,12 @@ iframe {
     transition: bottom 0.3s ease;
 }
 @media screen and (max-width: 1000px) {
-    iframe {
+    iframe.website-iframe {
         aspect-ratio: 3/2;
     }
 }
 @media screen and (max-width: 720px) {
-    iframe {
+    iframe.website-iframe {
         aspect-ratio: 1/1;
     }
     .smol-placeholder img {
@@ -464,17 +458,17 @@ iframe {
         width: 50%;
         height: 100%;
     }
-    iframe {
+    iframe.website-iframe {
         aspect-ratio: 16/9;
     }
 }
 @media screen and (max-width: 550px){
-    iframe {
+    iframe.website-iframe {
         aspect-ratio: 10/7;
     }
 }
 @media screen and (max-width: 470px){
-    iframe {
+    iframe.website-iframe {
         aspect-ratio: 1/1;
     }
     .big-placeholder {
@@ -491,14 +485,13 @@ iframe {
     .iframe-box {
         scale: 0.6;
     }
-    iframe {
+    iframe.website-iframe {
         aspect-ratio: 5/6;
         width: 200%;
     }
 }
 @media screen and (max-width: 330px){
-    iframe {
+    iframe.website-iframe {
         aspect-ratio: 3/5;
     }
 }
-
