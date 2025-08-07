@@ -346,6 +346,18 @@ body::-webkit-scrollbar {
 .for-abc.active {
     display: flex;
 }
+.for-music {
+    display: none;
+}
+.for-music.active {
+    display: flex;
+}
+.for-spotify {
+    display: none;
+}
+.for-spotify.active {
+    display: flex;
+}
 .content-wrapper {
     width: 100%;
     padding: 2rem;
