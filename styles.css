@@ -46,11 +46,11 @@ body::-webkit-scrollbar {
     left: 0;
     height: 100%;
     width: 100%;
+    aspect-ratio: auto;
 }
 .bg img {
-   aspect-ratio: auto;
-   height: 100%;
-   width: auto;
+    height: 100%;
+    width: auto;
 }
 .grid3 {
     display: grid;
