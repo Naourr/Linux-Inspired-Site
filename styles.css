@@ -146,10 +146,10 @@ body::-webkit-scrollbar {
 }
 .open-area {
     position: fixed;
-    bottom: 2.5rem;
+    bottom: 1rem;
     right: 1rem;
     color: white;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.65);
     width: fit-content;
     height: fit-content;
     gap: 5px;
@@ -157,7 +157,7 @@ body::-webkit-scrollbar {
     border-radius: 4px;
 }
 .open-area:active {
-    background-color: rgba(255, 255, 255, 0.062);
+    background-color: rgba(255, 255, 255, 0.06);
 }
 .open-area p {
     font-size: .7rem;
