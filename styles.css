@@ -346,6 +346,62 @@ body::-webkit-scrollbar {
 .for-abc.active {
     display: flex;
 }
+
+.for-river-flows {
+    display: none;
+}
+.for-river-flows.active {
+    display: flex;
+}
+.for-wheres-my-mind {
+    display: none;
+}
+.for-wheres-my-mind.active {
+    display: flex;
+}
+.for-slow-dancing {
+    display: none;
+}
+.for-slow-dancing.active {
+    display: flex;
+}
+.for-wind {
+    display: none;
+}
+.for-wind.active {
+    display: flex;
+}
+.for-edgerunners {
+    display: none;
+}
+.for-edgerunners.active {
+    display: flex;
+}
+.for-let-her-go {
+    display: none;
+}
+.for-let-her-go.active {
+    display: flex;
+}
+.for-quintuplet {
+    display: none;
+}
+.for-quintuplet.active {
+    display: flex;
+}
+.for-the-worst {
+    display: none;
+}
+.for-the-worst.active {
+    display: flex;
+}
+.for-chimera {
+    display: none;
+}
+.for-chimera.active {
+    display: flex;
+}
+
 .for-music {
     display: none;
 }
