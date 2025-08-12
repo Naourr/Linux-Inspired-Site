@@ -145,9 +145,9 @@ body::-webkit-scrollbar {
     font-size: 1.5rem;
 }
 .open-area {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
     color: white;
     background-color: rgba(0, 0, 0, 0.65);
     width: fit-content;
@@ -180,7 +180,6 @@ body::-webkit-scrollbar {
     transition: top .6s ease;
     transition: height 0.3s ease;
 }
-
 .big-window {
     background-color: rgba(0, 0, 0, 0.76);
     width: 60%;
@@ -190,6 +189,12 @@ body::-webkit-scrollbar {
     overflow-y: scroll;
     overflow-x: hidden;
     scrollbar-color: pink rgba(0, 0, 0, 0.288);
+}
+.pic {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 2.5rem;
 }
 .smol-windows {
     gap: 8px;
@@ -235,7 +240,7 @@ body::-webkit-scrollbar {
     padding: 8px;
 }
 .item-group {
-    gap: 2px;
+    gap: 3px;
     width: 100%;
 }
 .item {
@@ -243,12 +248,12 @@ body::-webkit-scrollbar {
     width: 100%;
     justify-content: left;
     color: white;
-    background-color: rgba(26, 26, 26, 0.6);
+    background-color: rgba(20, 20, 20, 0.9);
     padding: 5px 1rem;
     border-radius: 5px;
 }
 .item:active {
-    background-color: rgba(41, 41, 41, 0.6);
+    background-color: rgba(30, 30, 30, 0.8);
 }
 .for-websites {
     display: none;
@@ -449,6 +454,7 @@ iframe.website-iframe {
 .big-placeholder, .smol-placeholder {
     color: white;
     padding: 2rem;
+    padding-top: 2rem;
 }
 .big-placeholder {
     display: none;

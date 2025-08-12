@@ -87,7 +87,6 @@ function ActivateWindowOnButtonClick(buttonGroup, dataGroup) {
                 if (iframe && !iframe.src) {
                     iframe.src = iframe.dataset.src;
                 }
-
                 // const sources = target.querySelectorAll('video source[data-src]');
                 // sources.forEach(source => {
                 //     if (!source.src) {
