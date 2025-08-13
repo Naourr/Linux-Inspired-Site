@@ -145,9 +145,9 @@ body::-webkit-scrollbar {
     font-size: 1.5rem;
 }
 .open-area {
-    position: absolute;
-    bottom: 8px;
+    position: fixed;
     right: 8px;
+    bottom: 32px;
     color: white;
     background-color: rgba(0, 0, 0, 0.65);
     width: fit-content;
