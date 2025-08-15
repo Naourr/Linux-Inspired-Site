@@ -315,6 +315,12 @@ body::-webkit-scrollbar {
 .for-tictactoe.active {
     display: flex;
 }
+.for-notes-app {
+    display: none;
+}
+.for-notes-app.active {
+    display: flex;
+}
 .for-games {
     display: none;
 }
