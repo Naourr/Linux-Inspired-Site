@@ -345,6 +345,12 @@ body::-webkit-scrollbar {
 .for-guitar.active {
     display: flex;
 }
+.for-glimmer {
+    display: none;
+}
+.for-glimmer.active {
+    display: flex;
+}
 .for-playing-god {
     display: none;
 }
