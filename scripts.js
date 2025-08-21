@@ -4,6 +4,27 @@ window.addEventListener('load', () => {
     loading.style.opacity = '0';
 });
 
+function deactivateGroups() {
+    const contentGroups = document.querySelectorAll('.content-group');
+    const itemGroups = document.querySelectorAll('.item-group');
+    contentGroups.forEach(content => content.style.display = "none");
+    itemGroups.forEach(item => item.style.display = "none");
+}
+deactivateGroups();
+
+function activateGroups() {
+    const contentGroups_act = document.querySelectorAll('.content-group.active');
+    const itemGroups_act = document.querySelectorAll('.item-group.active');
+
+    contentGroups_act.forEach(content_act => {
+        content_act.style.display = "flex";
+    });
+    itemGroups_act.forEach(item_act => {
+        item_act.style.display = "flex";
+    });
+}
+
+
 const icons = document.querySelectorAll('.icon');
 const alert = document.querySelector('.alert-wrapper');
 icons.forEach(icon => {
@@ -55,6 +76,7 @@ ActivateWindowOnButtonClick(items, 'content');
 function ActivateWindowOnButtonClick(buttonGroup, dataGroup) {
     buttonGroup.forEach(buttonG => {
         buttonG.addEventListener('click', () => {
+
             const name = buttonG.dataset[dataGroup];
             const target = document.querySelector(`.for-${name}`);
             if (!target) return;
@@ -80,7 +102,10 @@ function ActivateWindowOnButtonClick(buttonGroup, dataGroup) {
                 }
             });
             target.classList.toggle('active');
+            deactivateGroups();
+            activateGroups();
 
+            
             const isNowVisible = window.getComputedStyle(target).display !== 'none';
             if (isNowVisible) {
                 const iframe = target.querySelector('iframe[data-src]');
@@ -175,5 +200,4 @@ function updateClock() {
     setTextIfChanged(elMinute, minute);
     // setTextIfChanged(elSecond, second);
 }
-
 setInterval(updateClock, 5000);
