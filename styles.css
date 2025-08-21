@@ -431,6 +431,7 @@ body::-webkit-scrollbar {
 .for-spotify.active {
     display: flex;
 }
+/* NOOO YOU DIDNT ANY OF THAT NOOOO */
 .content-wrapper {
     width: 100%;
     padding: 2rem;
@@ -453,6 +454,18 @@ iframe.website-iframe {
     border-radius: 8px;
     aspect-ratio: 16/9;
     width: 120%;
+}
+.iframe-box::before {
+    content: "pls wait owo";
+    width: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: white;
+    position: absolute;
+    z-index: -1;
 }
 .video-box {
     width: 100%;
