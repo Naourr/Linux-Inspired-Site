@@ -24,7 +24,6 @@ function activateGroups() {
     });
 }
 
-
 const icons = document.querySelectorAll('.icon');
 const alert = document.querySelector('.alert-wrapper');
 icons.forEach(icon => {
