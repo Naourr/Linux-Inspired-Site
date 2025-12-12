@@ -199,4 +199,4 @@ function updateClock() {
     setTextIfChanged(elMinute, minute);
     // setTextIfChanged(elSecond, second);
 }
-setInterval(updateClock, 5000);
+setInterval(updateClock, 20000);
