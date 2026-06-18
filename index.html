@@ -2,384 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linux Inspired Site</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="/assets/ascii_p1.gif">
 </head>
 <body>
-    <div class="row loading">
-        <img src="/assets/ascii_p1.gif">
-    </div>
-    <div preload="auto">
-        <div class="row bg">
-            <img src="/assets/bg.gif">
+    <nav class="row">
+        <div class="icons-left">
+            <img src="/assets/menu.png">
         </div>
-        <div class="grid3 topbar">
-            <div class="row left">
-                <div class="row icon-box">
-                    <img src="/assets/menu.png" class="icon menu-icon">
-                </div>
-            </div>
-            <div class="center">
-                <p id="clock"></p>
-            </div>
-            <div class="row right">
-                <div class="row icon-box">
-                    <img src="/assets/wifi.png" class="icon wifi-icon">
-                </div>
-                <div class="row icon-box">
-                    <img src="/assets/bluetooth.png" class="icon bluetooth-icon">
-                </div>
-                <div class="row icon-box">
-                    <img src="/assets/battery.png" class="icon battery-icon">
-                </div>
-            </div>
+        <div id="date">Mon, Jan 01, 2026</div>
+        <div class="icons-right">
+            <img src="/assets/wifi.png">
+            <img src="/assets/bluetooth.png">
+            <img src="/assets/battery.png">
         </div>
-        <div class="column clock">
-            <div class="clock-bg">
-                <span id="hour">00</span> : <span id="minute">00</span>
-                <br>
-                <span id="day">30</span>
-                <br>
-                <span id="month">Jan</span> - <span id="weekday">Mon</span>
-                <br>
-            </div>
+    </nav>
+    <main class="row">
+        <div class="clock">
+            <span id="hour">07</span> : <span id="minute">39</span>
+            <br>
+            <span id="day">30</span>
+            <br>
+            <span id="month">Jan</span> - <span id="weekday">Mon</span>
+            <br>
         </div>
-    </div>
-    <div class="grid3 topbar bottombar">
-        <div class="row left">
-            <div class="row icon-box">
-                <img src="/assets/menu.png" class="icon menu-icon">
-            </div>
+        <div class="col desktop-icon">
+            <img src="/assets/folder-purple.png" width="30px">
+            <p>Projects</p>
         </div>
-        <div class="center">
-            <p id="clockbottom"></p>
-        </div>
-        <div class="row right">
-            <div class="row icon-box">
-                <img src="/assets/wifi.png" class="icon wifi-icon">
-            </div>
-            <div class="row icon-box">
-                <img src="/assets/bluetooth.png" class="icon bluetooth-icon">
-            </div>
-            <div class="row icon-box">
-                <img src="/assets/battery.png" class="icon battery-icon">
-            </div>
-        </div>
-    </div>
-    <div class="row filescreen">
-        <div class="big-window">
-            <div class="column big-placeholder">
-                    <!-- <pre>
-                              ⢠⠢
-                            ⢀⣶⠋⡆⢹
-                       ⢀⡆⢀⣤⢛⠛⣠⣿⠀⡏
-                     ⢀⣶⣿⠟⣡⠊⣠⣾⣿⠃⣠
-                   ⣴⣯⣿⠀⠊⣤⣿⣿⣿⠃⣴⣧⣄⣀
-              ⢀⣤⣶⣿⣿⡟⣠⣶⣿⣿⣿⢋⣤⠿⠛⠉⢁⣭⣽⠋
-           ⣠⠖⡭⢉⣿⣯⣿⣯⣿⣿⣿⣟⣧⠛⢉⣤⣶⣾⣿⣿⠋
-         ⣴⣫⠓⢱⣯⣿⢿⠋⠛⢛⠟⠯⠶⢟⣿⣯⣿⣿⣿⣿⣿⣿⣦⣄
-      ⢀⡮⢁⣴⣿⣿⣿⠖⣠⠐⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠛⠛⠛⢿⣶⣄
-  ⠀⢀⣤⣷⣿⣿⠿⢛⣭⠒⠉⠀⠀⠀⣀⣀⣄⣤⣤⣴⣶⣶⣶⣿⣿⣿⣿⣿⠿⠋⠁
- ⢀⣶⠏⠟⠝⠉⢀⣤⣿⣿⣶⣾⣿⣿⣿⣿⣿⣿⣟⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧
-⢴⣯⣤⣶⣿⣿⣿⣿⣿⡿⣿⣯⠉⠉⠉⠉⠀⠀⠀⠈⣿⡀⣟⣿⣿⢿⣿⣿⣿⣿⣿⣦
-   ⠉⠛⣿⣧⠀⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠃⣿⣿⣯⣿⣦⡀⠀⠉⠻⣿⣦
-      ⠉⢿⣮⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⠀⣯⠉⠉⠛⢿⣿⣷⣄⠀⠈⢻⣆
-         ⠉⠢⠀⠀⠀⠀⠀⠀⠀⢀⢡⠃⣾⣿⣿⣦⠀⠀⠀⠙⢿⣿⣤⠀⠙⣄
-                   ⢀⢋⡟⢠⣿⣿⣿⠋⢿⣄⠀⠀⠀⠈⡄⠙⣶⣈⡄
-                ⠐⠚⢲⣿⠀⣾⣿⣿⠁⠀⠀⠉⢷⡀⠀⠀⣇⠀⠀⠈⠻⡀
-               ⢢⣀⣿⡏⠀⣿⡿⠀⠀⠀⠀⠀⠀⠙⣦⠀⢧⠀⠀⠀
-                ⢸⠿⣧⣾⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣮⠀⠀⠀
-                   ⠉⠙⠛
-                    </pre> 
-                    <br> -->
-                    <img src="/assets/vidyolet.jpeg" class="pic">
-                    <p>I dont wanna talk about myself but i want some text here so enjoy lorem for now.<br>
-                        <br>
-                            <a href="https://github.com/Naourr" target="_blank">Github</a><br>
-                        <br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, perspiciatis accusantium. Debitis pariatur, provident voluptates similique accusamus veritatis molestias sed obcaecati maiores aspernatur, quasi placeat, necessitatibus saepe hic quisquam natus?<br>
-                        <br>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia consequuntur voluptate cumque culpa ratione modi est quia nostrum voluptatum doloremque incidunt, aperiam numquam dolorum dolore quisquam, debitis ad perferendis! Quos!<br>
-                        <br>
-                        Ill fix this later. (i ddnt)
-                    </p>
-            </div>
-            <div class="column content-wrapper">
-                <div class="column content-group for-quiz-web">
-                   <div class="column iframe-box">
-                       <iframe data-src="https://areyoupsychotic.netlify.app/" class="website-iframe"></iframe>
-                   </div>
-                    <a href="https://areyoupsychotic.netlify.app/" target="_blank">https://areyoupsychotic.netlify.app/</a>
-                </div>
-                <div class="column content-group for-ken-web">
-                    <div class="column iframe-box">
-                        <iframe data-src="https://hehihart-site.netlify.app/" class="website-iframe"></iframe>
-                    </div>
-                    <a href="https://hehihart-site.netlify.app/" target="_blank">https://hehihart-site.netlify.app/</a>
-                </div>
-                <div class="column content-group for-linux-web">
-                    <div class="column iframe-box">
-                        <iframe data-src="https://linux-inspired-site.netlify.app/" class="website-iframe"></iframe>
-                    </div>
-                    <a href="https://linux-inspired-site.netlify.app/" target="_blank">https://linux-inspired-site.netlify.app/</a>
-                </div>
-                <div class="column content-group for-m4d-web">
-                    <div class="column iframe-box">
-                        <iframe data-src="https://m4d.netlify.app/" class="website-iframe"></iframe>
-                    </div>
-                    <a href="https://m4d.netlify.app/" target="_blank">https://m4d.netlify.app/</a>
-                </div>
-                <div class="column content-group for-hannah-web">
-                    <div class="column iframe-box">
-                        <iframe data-src="https://han-nah.netlify.app/" class="website-iframe"></iframe>
-                    </div>
-                    <a href="https://han-nah.netlify.app/" target="_blank">https://han-nah.netlify.app/</a>
-                </div>
-                <div class="column content-group for-ass-web">
-                    <div class="column iframe-box">
-                        <iframe data-src="https://dcit21.netlify.app/" class="website-iframe"></iframe>
-                    </div>
-                    <a href="https://dcit21.netlify.app/" target="_blank">https://dcit21.netlify.app/</a>
-                </div>
+        <div class="dashboard">
+            <div class="col" id="main-stage">
 
-                <div class="column content-group for-pink-calc">
-                    <div class="column iframe-box">
-                        <iframe data-src="https://athing.netlify.app/" class="website-iframe" frameborder="0"></iframe>
-                    </div>
-                    <a href="https://athing.netlify.app/" target="_blank">https://athing.netlify.app/</a>
-                </div>
-                <div class="column content-group for-tictactoe">
-                    <div class="column iframe-box">
-                        <iframe data-src="https://lickmytoe.netlify.app/" class="website-iframe" frameborder="0"></iframe>
-                    </div>
-                    <a href="https://lickmytoe.netlify.app/" target="_blank">https://lickmytoe.netlify.app/</a>
-                </div>
-                <div class="column content-group for-notes-app">
-                    <div class="column iframe-box">
-                        <iframe data-src="https://js-write-notes.netlify.app/" class="website-iframe" frameborder="0"></iframe>
-                    </div>
-                    <a href="https://js-write-notes.netlify.app/" target="_blank">https://js-write-notes.netlify.app/</a>
-                </div>
-                <div class="column content-group for-shooter">
-                    <div class="column iframe-box">
-                        <iframe data-src="https://itch.io/embed-upload/12189515?color=e53b44" class="website-iframe"></iframe>
-                    </div>
-                    <a href="https://naour.itch.io/gayme" target="_blank">https://naour.itch.io/gayme</a>
-                </div>
-                <div class="column content-group for-visual-novel">
-                    <div class="column iframe-box">
-                        <iframe data-src="https://itch.io/embed-upload/13851253?color=190000" class="website-iframe"></iframe>
-                    </div>
-                    <a href="https://naour.itch.io/i-am-the-problem" target="_blank">https://naour.itch.io/i-am-the-problem</a>
-                </div>
-                <div class="column content-group for-yt-playlist">
-                    <div class="column video-box">
-                        <iframe data-src="https://www.youtube.com/embed/videoseries?si=9qGBk8iC9OpGO5HW&amp;list=PL3kHQuflY0eoiiyG4IElws9Zm7Z28FQLV" class="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="column content-group for-glimmer">
-                    <div class="column video-box">
-                        <iframe data-src="https://www.youtube.com/embed/1nRaKhhFCS0?si=9vaCAMmcSRnPZx8_" class="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="column content-group for-playing-god">
-                    <div class="column video-box">
-                        <iframe data-src="https://www.youtube.com/embed/9GiQZgoF2ag?si=Eky7gfDZAFy0bJeP" class="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="column content-group for-abc">
-                    <div class="column video-box">
-                        <iframe data-src="https://www.youtube.com/embed/wdWkg_7-STY?si=pIe_iG9ECGv6xJnj" class="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="column content-group for-edgerunners">
-                    <div class="column video-box">
-                        <iframe data-src="https://www.youtube.com/embed/7q2-KJmxbk8?si=zPb2vzc7tUptrADc" class="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="column content-group for-slow-dancing">
-                    <div class="column video-box">
-                        <iframe data-src="https://www.youtube.com/embed/uw0t2c12slU?si=J6xWERLzUi00hzEc" class="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="column content-group for-quintuplet">
-                    <div class="column video-box">
-                        <iframe data-src="https://www.youtube.com/embed/bUoCHXxVD4o?si=xxlo45P6OcdXnSeS" class="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="column content-group for-let-her-go">
-                    <div class="column video-box">
-                        <iframe data-src="https://www.youtube.com/embed/Kjg-cZNJqko?si=HsWqCE7O4-R92qbb" class="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="column content-group for-wind">
-                    <div class="column video-box">
-                        <iframe data-src="https://www.youtube.com/embed/KOFmEVE9xHU?si=NuzsfkiEZIzBorph" class="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="column content-group for-wheres-my-mind">
-                    <div class="column video-box">
-                        <iframe data-src="https://www.youtube.com/embed/JI26nh8V4oc?si=nxW721y1J-LNnoYO" class="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="column content-group for-river-flows">
-                    <div class="column video-box">
-                        <iframe data-src="https://www.youtube.com/embed/yECOHvwZVqo?si=Q8oB4ECHDMFbbvCu" class="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="column content-group for-the-worst">
-                    <div class="column video-box">
-                        <iframe data-src="https://www.youtube.com/embed/L8wA4-maRWQ?si=m97PnVWWYZWKBVYW" class="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="column content-group for-chimera">
-                    <div class="column video-box">
-                        <iframe data-src="https://www.youtube.com/embed/zR3XOMG52sA?si=eZtxUqZKXcIVjW4R" class="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="column content-group for-playing-god-bossa">
-                    <div class="column video-box">
-                        <iframe data-src="https://www.youtube.com/embed/fPv2AKFC858?si=O7QbTqCVbeQF-eO0" class="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="column content-group for-spotify">
-                    <div class="column video-box">
-                        <iframe class="spotify" data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2PNHkinJ4PcKaqhox9OeDX?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                    </div>
-                </div>
             </div>
-        </div>
-        <div class="column smol-windows">
-            <div class="smol-window1">
-                <div class="column smol-placeholder">
-                    <img src="/assets/ascii_p1.gif">
+            <aside>
+                <div class="col" id="list-stage">
+                    
                 </div>
-                <div class="column list-wrapper">
-                    <div class="column item-group for-websites">
-                        <div class="row item" data-content="quiz-web">
-                            <p>Quiz Website</p>
-                        </div>
-                        <div class="row item" data-content="ken-web">
-                            <p>Art Portfolio Website</p>
-                        </div>
-                        <div class="row item" data-content="linux-web">
-                            <p>Linux Inspired Website</p>
-                        </div>
-                        <div class="row item"  data-content="m4d-web">
-                            <p>Business Website</p>
-                        </div>
-                        <div class="row item"  data-content="hannah-web">
-                            <p>Neocities type Website</p>
-                        </div>
-                        <div class="row item"  data-content="ass-web">
-                            <p>Assignment</p>
-                        </div>
-                    </div>
-                    <div class="column item-group for-web-apps">
-                        <div class="row item" data-content="pink-calc">
-                            <p>Pink Calculator</p>
-                        </div>
-                        <div class="row item" data-content="tictactoe">
-                            <p>TicTacToe</p>
-                        </div>
-                        <div class="row item" data-content="notes-app">
-                            <p>Notes App</p>
-                        </div>
-                    </div>
-                    <div class="column item-group for-games">
-                        <div class="row item" data-content="shooter">
-                            <p>Scratch Shooter</p>
-                        </div>
-                        <div class="row item" data-content="visual-novel">
-                            <p>Viual Novel</p>
-                        </div>
-                    </div>
-                    <div class="column item-group for-guitar">
-                        <div class="row item" data-content="yt-playlist">
-                            <p>Full YT PLaylist</p>
-                        </div>
-                        <div class="row item" data-content="glimmer">
-                            <p>Glimmer</p>
-                        </div>
-                        <div class="row item" data-content="abc">
-                            <p>ABC</p>
-                        </div>
-                        <div class="row item" data-content="playing-god">
-                            <p>Playing God</p>
-                        </div>
-                        <div class="row item" data-content="playing-god-bossa">
-                            <p>Playing God - Bossa Nova part</p>
-                        </div>
-                        <div class="row item" data-content="the-worst">
-                            <p>The Worst</p>
-                        </div>
-                        <div class="row item" data-content="let-her-go">
-                            <p>Let Her Go</p>
-                        </div>
-                        <div class="row item" data-content="edgerunners">
-                            <p>I Really Wanna Stay At Your House</p>
-                        </div>
-                        <div class="row item" data-content="wind">
-                            <p>Wind</p>
-                        </div>
-                        <div class="row item" data-content="river-flows">
-                            <p>River Flows In You</p>
-                        </div>
-                        <div class="row item" data-content="wheres-my-mind">
-                            <p>Wheres My Mind</p>
-                        </div>
-                        <div class="row item" data-content="slow-dancing">
-                            <p>Slow Dancing In A Burning Room</p>
-                        </div>
-                        <div class="row item" data-content="quintuplet">
-                            <p>Quintuplet Meditation</p>
-                        </div>
-                        <div class="row item" data-content="chimera">
-                            <p>Chimera</p>
-                        </div>
-                    </div>
-                    <div class="column item-group for-music">
-                        <div class="row item" data-content="spotify">
-                            <p>Spotify</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="smol-window2">
-                <div class="folders-wrapper">
-                    <div class="column folder-area websites" data-folder="websites">
-                        <img src="/assets/folder-purple.png" height="35px" width="auto">
+                <div class="row" id="folder-stage">
+                    <div data-category="websites">
+                        <img src="/assets/folder-purple.png">
                         <p>Websites</p>
                     </div>
-                    <div class="column folder-area web-apps" data-folder="web-apps">
-                        <img src="/assets/folder-purple.png" height="35px" width="auto">
-                        <p>Web apps</p>
+                    <div data-category="web_apps">
+                        <img src="/assets/folder-purple.png">
+                        <p>Apps</p>
                     </div>
-                    <div class="column folder-area games" data-folder="games">
-                        <img src="/assets/folder-purple.png" height="35px" width="auto">
+                    <div data-category="games">
+                        <img src="/assets/folder-purple.png">
                         <p>Games</p>
                     </div>
-                    <div class="column folder-area guitar" data-folder="guitar">
-                        <img src="/assets/folder-purple.png" height="35px" width="auto">
+                    <div data-category="guitar">
+                        <img src="/assets/folder-purple.png">
                         <p>Guitar</p>
                     </div>
-                    <div class="column folder-area music" data-folder="music">
-                        <img src="/assets/folder-purple.png" height="35px" width="auto">
-                        <p>Music</p>
+                    <div data-category="assignments">
+                        <img src="/assets/folder-purple.png">
+                        <p>College</p>
+                    </div>
+                    <div data-category="python">
+                        <img src="/assets/folder-purple.png">
+                        <p>Python</p>
                     </div>
                 </div>
-            </div>
+            </aside>
         </div>
-    </div>
-    <div class="column open-area">
-        <img src="/assets/folder-purple.png" class="open" height="30px" width="auto">
-        <p>Projects</p>
-    </div>
-    <div class="column alert-wrapper">
-        <div class="column alert">
-            <p>that unfortunately doesnt do anything..</p>
+    </main>
+    <div class="row fixed-elements">
+        <div class="row popup">
+            <p>That unfortunately doesnt do anything..</p>
+        </div>
+        <div class="row loading active">
+            <img src="/assets/ascii_p1.gif" width="230px">
         </div>
     </div>
     <script src="scripts.js"></script>
