@@ -1,23 +1,3 @@
-//                               ⢠⠢
-//                             ⢀⣶⠋⡆⢹
-//                        ⢀⡆⢀⣤⢛⠛⣠⣿⠀⡏
-//                      ⢀⣶⣿⠟⣡⠊⣠⣾⣿⠃⣠
-//                    ⣴⣯⣿⠀⠊⣤⣿⣿⣿⠃⣴⣧⣄⣀
-//               ⢀⣤⣶⣿⣿⡟⣠⣶⣿⣿⣿⢋⣤⠿⠛⠉⢁⣭⣽⠋
-//            ⣠⠖⡭⢉⣿⣯⣿⣯⣿⣿⣿⣟⣧⠛⢉⣤⣶⣾⣿⣿⠋
-//          ⣴⣫⠓⢱⣯⣿⢿⠋⠛⢛⠟⠯⠶⢟⣿⣯⣿⣿⣿⣿⣿⣿⣦⣄
-//       ⢀⡮⢁⣴⣿⣿⣿⠖⣠⠐⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠛⠛⠛⢿⣶⣄
-//   ⠀⢀⣤⣷⣿⣿⠿⢛⣭⠒⠉⠀⠀⠀⣀⣀⣄⣤⣤⣴⣶⣶⣶⣿⣿⣿⣿⣿⠿⠋⠁
-//  ⢀⣶⠏⠟⠝⠉⢀⣤⣿⣿⣶⣾⣿⣿⣿⣿⣿⣿⣟⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧
-// ⢴⣯⣤⣶⣿⣿⣿⣿⣿⡿⣿⣯⠉⠉⠉⠉⠀⠀⠀⠈⣿⡀⣟⣿⣿⢿⣿⣿⣿⣿⣿⣦
-//    ⠉⠛⣿⣧⠀⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠃⣿⣿⣯⣿⣦⡀⠀⠉⠻⣿⣦
-//       ⠉⢿⣮⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⠀⣯⠉⠉⠛⢿⣿⣷⣄⠀⠈⢻⣆
-//          ⠉⠢⠀⠀⠀⠀⠀⠀⠀⢀⢡⠃⣾⣿⣿⣦⠀⠀⠀⠙⢿⣿⣤⠀⠙⣄
-//                    ⢀⢋⡟⢠⣿⣿⣿⠋⢿⣄⠀⠀⠀⠈⡄⠙⣶⣈⡄
-//                 ⠐⠚⢲⣿⠀⣾⣿⣿⠁⠀⠀⠉⢷⡀⠀⠀⣇⠀⠀⠈⠻⡀
-//                ⢢⣀⣿⡏⠀⣿⡿⠀⠀⠀⠀⠀⠀⠙⣦⠀⢧⠀⠀⠀
-//                 ⢸⠿⣧⣾⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣮⠀⠀⠀
-//                    ⠉⠙⠛
 window.addEventListener('load', () => {
     const loading = document.querySelector('.loading')
     loading.classList.remove('active')
@@ -103,6 +83,9 @@ function showMainPlaceholder() {
     const placeholder = document.createElement('div')
     placeholder.className = 'col placeholder active'
     placeholder.innerHTML = `
+                    <p>
+                        <span class='zsh'>『TwinkPad-』</span><span>◤</span>~  ▶ <span>fastfetch</span>
+                    </p>
                     <div class='row fastfetch'>
                         <pre class='fastfetch-ascii'>
                     -\`
@@ -124,23 +107,23 @@ function showMainPlaceholder() {
    \`+sso+:-\`                 \`.-/+oso:
   \`++:.                           \`-/+/
   .\`                                 \`/</pre>
-                        <pre class='fastdetch-details'>
-user        nein
-hname       spectre
-uptime      17 seconds
-distro      EndeavourOS x86_64
-kernel      Linux 6.18.7-zen1-1-zen
-term        konsole 25.12.2
-shell       zsh 5.9
-cpu         Intel(R) Core(TM) i7-7560U (4) @ 3.80 GHz
-disk        31.17 GiB / 95.56 GiB (33%) - ext4
-memory      2.23 GiB / 15.47 GiB (14%)
-network     192.168.1.7/24 (wlan0)
-colors      ● ● ● ● ● ● ● ●</pre>
+                        <div class='fastdetch-details'>
+                            <p><i class="ph ph-user"></i> <span class="fetch-key">user:</span> nein</p>
+                            <p><i class="ph ph-desktop"></i> <span class="fetch-key">hname:</span> spectre</p>
+                            <p><i class="ph ph-clock"></i> <span class="fetch-key">uptime:</span> 17 seconds</p>
+                            <p><i class="ph ph-linux-logo"></i> <span class="fetch-key">distro:</span> EndeavourOS x86_64</p>
+                            <p><i class="ph ph-nut"></i> <span class="fetch-key">kernel:</span> Linux 6.18.7-zen1-1-zen</p>
+                            <p><i class="ph ph-terminal-window"></i> <span class="fetch-key">term:</span> konsole 25.12.2</p>
+                            <p><i class="ph ph-command"></i> <span class="fetch-key">shell:</span> zsh 5.9</p>
+                            <p><i class="ph ph-cpu"></i> <span class="fetch-key">cpu:</span> Intel(R) Core(TM) i7-7560U (4) @ 3.80 GHz</p>
+                            <p><i class="ph ph-hard-drive"></i> <span class="fetch-key">disk:</span> 31.17 GiB / 95.56 GiB (33%) - ext4</p>
+                            <p><i class="ph ph-cpu"></i> <span class="fetch-key">memory:</span> 2.23 GiB / 15.47 GiB (14%)</p>
+                            <p><i class="ph ph-wifi-high"></i> <span class="fetch-key">network:</span> 192.168.1.7/24 (wlan0)</p>
+                            <p><i class="ph ph-palette"></i> <span class="fetch-key">colors</span>   <span class="c-white">●</span> <span class="c-cyan">●</span> <span class="c-pink">●</span> <span class="c-salmon">●</span> <span class="c-purple">●</span> <span class="c-gray">●</span> <span class="c-black">●</span></p>
+                        </div>
                     </div>
                     <p>
-                        『TwinkPad-』 ~  ▶
-                        Insert edgy ahhh placeholder<br>
+                        <span class='zsh'>『TwinkPad-』</span><span>◤</span>~  ▶ <span>Insert edgy ahhh placeholder</span><br>
                         <br>
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore itaque, molestias, saepe at tempore earum officiis veniam, 
                         consequatur distinctio atque facere autem accusantium fugiat eveniet accusamus similique voluptas doloremque tenetur?
