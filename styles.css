@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 * {
     box-sizing: border-box;
     margin: 0;
@@ -11,7 +11,7 @@ body {
     background-image: url(/assets/bg.gif);
     background-size: cover;
     background-position: center;
-    font-family: "Play", sans-serif;
+    font-family: 'JetBrains Mono', monospace;
     font-weight: 400;
     color: white;
 }
@@ -45,6 +45,9 @@ nav.row {
     backdrop-filter: blur(5px);
     justify-content: space-between;
     padding: 0 10px;
+}
+#date {
+    font-size: 0.8rem;
 }
 nav > * {
     display: flex;
@@ -169,13 +172,20 @@ main {
     z-index: 99;
 }
 .desktop-icon:hover {
-    background-color: var(--transparent-gray);
+    background-color: var(--accent1);
+    color: black;
 }
 .desktop-icon:active {
-    background-color: var(--dullgray);
+    background-color: var(--accent3);
 }
 .desktop-icon p {
-    font-size: .85rem;
+    font-size: 0.7rem;
+}
+body:has(.dashboard.active) .desktop-icon {
+    background-color: var(--dullgray);
+}
+body:has(.dashboard.active) .desktop-icon:hover p {
+    color: var(--accent1);
 }
 
 .dashboard {
@@ -202,10 +212,11 @@ main {
     background-color: var(--transparent-black);
     backdrop-filter: blur(5px);
     border-radius: 4px;
-    padding: 2rem;
+    padding: 1.5rem;
     overflow-y: scroll;
     scrollbar-width: thin;
     scrollbar-color: var(--accent1) transparent;
+    border: 4px double var(--accent1);
 }
 #main-stage {
     height: 100%;
@@ -213,6 +224,11 @@ main {
     justify-content: start;
     overflow-y: scroll;
     overflow-x: hidden;
+}
+legend {
+    padding: 0 10px;
+    text-wrap: nowrap;
+    font-size: 0.8rem;
 }
 #main-stage:has(iframe) {
     justify-content: center;
@@ -240,10 +256,22 @@ iframe {
 }
 .placeholder {
     display: none;
+    gap: 2rem;
 }
 .placeholder.active {
     display: flex;
 }
+
+pre,
+.fastfetch ~ * {
+    line-height: 1.5;
+    letter-spacing: 0px;
+    font-size: 0.85rem;
+}
+.fastfetch {
+    gap: 2rem;
+}
+
 aside {
     height: 100%;
     width: 30%;
@@ -262,24 +290,25 @@ aside {
     justify-content: start;
 }
 #list-stage > p {
-    background-color: var(--darkergray);
+    background-color: var(--dullgray);
     padding: 5px 1rem;
     border-radius: 5px;
     width: 100%;
+    font-size: 0.75rem;
 }
 #list-stage > p:hover {
-    background-color: var(--transparent-gray);
+    background-color: var(--accent1);
+    color: black;
 }
 #list-stage > p:active {
-    background-color: var(--dullgray);
+    background-color: var(--accent3);
 }
 #list-stage:has(img) {
     justify-content: center;
-    padding: 4rem;
     overflow: hidden;
 }
 #list-stage img {
-    width: 100%;
+    width: 80%;
 }
 #folder-stage {
     justify-content: start;
@@ -288,27 +317,29 @@ aside {
     gap: 4px;
     flex-wrap: wrap;
 }
-#folder-stage > * {
+#folder-stage > div {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
     gap: 5px;
-    border-radius: 4px;
-    background-color: var(--darkergray);
+    border-radius: 2px;
     aspect-ratio: 1/1;
     width: 80px;
     height: 70px;
 }
-#folder-stage > * img {
+#folder-stage > div img {
     width: 30px;
 }
-#folder-stage > * p {
-    font-size: .8rem;
+#folder-stage > div p {
+    font-size: .75rem;
 }
-#folder-stage > *:hover {
-    background-color: var(--transparent-gray);
+#folder-stage > div:hover {
+    border: 1px solid var(--accent1);
+}
+#folder-stage > div:active {
+    background-color: var(--accent3);
 }
 
 @media screen and (orientation: portrait) {
@@ -336,9 +367,22 @@ aside {
         width: auto;
     }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1200px) {
+    .fastfetch pre {
+        font-size: 0.7rem;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .fastfetch pre {
+        font-size: 0.6rem;
+    }
+}
+@media screen and (max-width: 600px) {
     #main-stage, #list-stage, #folder-stage {
         padding: 1rem;
+    }
+    .fastfetch pre {
+        font-size: 0.4rem;
     }
 }
 @media screen and (max-width: 450px) {
@@ -348,5 +392,12 @@ aside {
     iframe {
         scale: 0.7;
         width: calc(100% + 40%);
+    }
+    #list-stage img {
+        height: auto;
+        width: 80%;
+    }
+    .fastfetch pre {
+        font-size: 0.3rem;
     }
 }

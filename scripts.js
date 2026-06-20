@@ -1,3 +1,23 @@
+//                               ⢠⠢
+//                             ⢀⣶⠋⡆⢹
+//                        ⢀⡆⢀⣤⢛⠛⣠⣿⠀⡏
+//                      ⢀⣶⣿⠟⣡⠊⣠⣾⣿⠃⣠
+//                    ⣴⣯⣿⠀⠊⣤⣿⣿⣿⠃⣴⣧⣄⣀
+//               ⢀⣤⣶⣿⣿⡟⣠⣶⣿⣿⣿⢋⣤⠿⠛⠉⢁⣭⣽⠋
+//            ⣠⠖⡭⢉⣿⣯⣿⣯⣿⣿⣿⣟⣧⠛⢉⣤⣶⣾⣿⣿⠋
+//          ⣴⣫⠓⢱⣯⣿⢿⠋⠛⢛⠟⠯⠶⢟⣿⣯⣿⣿⣿⣿⣿⣿⣦⣄
+//       ⢀⡮⢁⣴⣿⣿⣿⠖⣠⠐⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠛⠛⠛⢿⣶⣄
+//   ⠀⢀⣤⣷⣿⣿⠿⢛⣭⠒⠉⠀⠀⠀⣀⣀⣄⣤⣤⣴⣶⣶⣶⣿⣿⣿⣿⣿⠿⠋⠁
+//  ⢀⣶⠏⠟⠝⠉⢀⣤⣿⣿⣶⣾⣿⣿⣿⣿⣿⣿⣟⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧
+// ⢴⣯⣤⣶⣿⣿⣿⣿⣿⡿⣿⣯⠉⠉⠉⠉⠀⠀⠀⠈⣿⡀⣟⣿⣿⢿⣿⣿⣿⣿⣿⣦
+//    ⠉⠛⣿⣧⠀⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠃⣿⣿⣯⣿⣦⡀⠀⠉⠻⣿⣦
+//       ⠉⢿⣮⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⠀⣯⠉⠉⠛⢿⣿⣷⣄⠀⠈⢻⣆
+//          ⠉⠢⠀⠀⠀⠀⠀⠀⠀⢀⢡⠃⣾⣿⣿⣦⠀⠀⠀⠙⢿⣿⣤⠀⠙⣄
+//                    ⢀⢋⡟⢠⣿⣿⣿⠋⢿⣄⠀⠀⠀⠈⡄⠙⣶⣈⡄
+//                 ⠐⠚⢲⣿⠀⣾⣿⣿⠁⠀⠀⠉⢷⡀⠀⠀⣇⠀⠀⠈⠻⡀
+//                ⢢⣀⣿⡏⠀⣿⡿⠀⠀⠀⠀⠀⠀⠙⣦⠀⢧⠀⠀⠀
+//                 ⢸⠿⣧⣾⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣮⠀⠀⠀
+//                    ⠉⠙⠛
 window.addEventListener('load', () => {
     const loading = document.querySelector('.loading')
     loading.classList.remove('active')
@@ -70,7 +90,7 @@ folders.forEach(folder => {
             showListPlaceholder()
             currentActiveCategory = null;
         } else {
-            listStage.innerHTML = ''
+            listStage.innerHTML = '<legend>List Stage</legend>'
             showInListStage(contents[selectedCategory])
             currentActiveCategory = selectedCategory;
         }
@@ -78,34 +98,48 @@ folders.forEach(folder => {
 })
 
 function showMainPlaceholder() {
-    mainStage.innerHTML = ''
+    mainStage.innerHTML = '<legend>Main Stage</legend>'
     
     const placeholder = document.createElement('div')
     placeholder.className = 'col placeholder active'
     placeholder.innerHTML = `
-                    <pre>
-                              ⢠⠢
-                            ⢀⣶⠋⡆⢹
-                       ⢀⡆⢀⣤⢛⠛⣠⣿⠀⡏
-                     ⢀⣶⣿⠟⣡⠊⣠⣾⣿⠃⣠
-                   ⣴⣯⣿⠀⠊⣤⣿⣿⣿⠃⣴⣧⣄⣀
-              ⢀⣤⣶⣿⣿⡟⣠⣶⣿⣿⣿⢋⣤⠿⠛⠉⢁⣭⣽⠋
-           ⣠⠖⡭⢉⣿⣯⣿⣯⣿⣿⣿⣟⣧⠛⢉⣤⣶⣾⣿⣿⠋
-         ⣴⣫⠓⢱⣯⣿⢿⠋⠛⢛⠟⠯⠶⢟⣿⣯⣿⣿⣿⣿⣿⣿⣦⣄
-      ⢀⡮⢁⣴⣿⣿⣿⠖⣠⠐⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠛⠛⠛⢿⣶⣄
-  ⠀⢀⣤⣷⣿⣿⠿⢛⣭⠒⠉⠀⠀⠀⣀⣀⣄⣤⣤⣴⣶⣶⣶⣿⣿⣿⣿⣿⠿⠋⠁
- ⢀⣶⠏⠟⠝⠉⢀⣤⣿⣿⣶⣾⣿⣿⣿⣿⣿⣿⣟⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧
-⢴⣯⣤⣶⣿⣿⣿⣿⣿⡿⣿⣯⠉⠉⠉⠉⠀⠀⠀⠈⣿⡀⣟⣿⣿⢿⣿⣿⣿⣿⣿⣦
-   ⠉⠛⣿⣧⠀⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠃⣿⣿⣯⣿⣦⡀⠀⠉⠻⣿⣦
-      ⠉⢿⣮⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⠀⣯⠉⠉⠛⢿⣿⣷⣄⠀⠈⢻⣆
-         ⠉⠢⠀⠀⠀⠀⠀⠀⠀⢀⢡⠃⣾⣿⣿⣦⠀⠀⠀⠙⢿⣿⣤⠀⠙⣄
-                   ⢀⢋⡟⢠⣿⣿⣿⠋⢿⣄⠀⠀⠀⠈⡄⠙⣶⣈⡄
-                ⠐⠚⢲⣿⠀⣾⣿⣿⠁⠀⠀⠉⢷⡀⠀⠀⣇⠀⠀⠈⠻⡀
-               ⢢⣀⣿⡏⠀⣿⡿⠀⠀⠀⠀⠀⠀⠙⣦⠀⢧⠀⠀⠀
-                ⢸⠿⣧⣾⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣮⠀⠀⠀
-                   ⠉⠙⠛
-                    </pre>
+                    <div class='row fastfetch'>
+                        <pre class='fastfetch-ascii'>
+                    -\`
+                   .o+\`
+                  \`ooo/
+                 \`+oooo:
+                \`+oooooo:
+                -+oooooo+:
+              \`/:-:++oooo+:
+             \`/++++/+++++++:
+            \`/++++++++++++++:
+           \`/+++ooooooooooooo/\`
+          ./ooosssso++osssssso+\`
+         .oossssso-\`\`\`\`/ossssss+\`
+        -osssssso.      :ssssssso.
+       :osssssss/        osssso+++.
+      /ossssssss/        +ssssooo/-
+    \`/ossssso+/:-        -:/+osssso+-
+   \`+sso+:-\`                 \`.-/+oso:
+  \`++:.                           \`-/+/
+  .\`                                 \`/</pre>
+                        <pre class='fastdetch-details'>
+user        nein
+hname       spectre
+uptime      17 seconds
+distro      EndeavourOS x86_64
+kernel      Linux 6.18.7-zen1-1-zen
+term        konsole 25.12.2
+shell       zsh 5.9
+cpu         Intel(R) Core(TM) i7-7560U (4) @ 3.80 GHz
+disk        31.17 GiB / 95.56 GiB (33%) - ext4
+memory      2.23 GiB / 15.47 GiB (14%)
+network     192.168.1.7/24 (wlan0)
+colors      ● ● ● ● ● ● ● ●</pre>
+                    </div>
                     <p>
+                        『TwinkPad-』 ~  ▶
                         Insert edgy ahhh placeholder<br>
                         <br>
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore itaque, molestias, saepe at tempore earum officiis veniam, 
@@ -122,7 +156,7 @@ function showMainPlaceholder() {
     mainStage.appendChild(placeholder)
 }
 function showListPlaceholder() {
-    listStage.innerHTML = `<img src="/assets/ascii_p1.gif">`
+    listStage.innerHTML = `<legend>List Stage</legend><img src="/assets/ascii_p1.gif">`
 }
 
 let currentActiveProject = null;
@@ -144,7 +178,7 @@ function showInListStage(list) {
 
 function showInMainStage(project) {
     currentActiveProject = project;
-    mainStage.innerHTML = ''
+    mainStage.innerHTML = '<legend>Main Stage</legend>'
     const frame = document.createElement('iframe')
     frame.style.border = '0px'
     let finalUrl = project.iframe_url
