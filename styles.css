@@ -573,4 +573,7 @@ aside {
     .fastdetch-details i {
         font-size: 0.3rem;
     }
+    pre.figlet {
+        font-size: 0.55rem;
+    }
 }
