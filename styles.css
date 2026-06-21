@@ -351,8 +351,6 @@ pre.figlet {
     font-family: 'JetBrains Mono', 'Courier New', monospace !important;
     display: block;
     white-space: pre;
-    font-variant-numeric: tabular-nums;
-    text-rendering: optimizeSpeed;
 }
 
 div:has(> .figlet) {
@@ -419,8 +417,6 @@ div:has(> .figlet) {
     font-family: 'JetBrains Mono', 'Courier New', monospace !important;
     display: inline-block;
     white-space: nowrap;
-    font-variant-numeric: tabular-nums;
-    text-rendering: optimizeSpeed;
 }
 
 .terminal-list {
@@ -584,29 +580,5 @@ aside {
     }
     pre.figlet {
         font-size: 6px;
-    }
-}
-@media (max-width: 450px) {
-    /* --- Force Figlet Characters to Align --- */
-    .figlet {
-        font-family: 'JetBrains Mono', 'Courier New', monospace !important;
-        white-space: pre !important;
-        display: block;
-        font-size: 0.38rem !important; /* Keep it small enough to not wrap lines early */
-        line-height: 1.1 !important;
-        
-        /* THE FIX: Force the browser to space out EVERY character by exactly 0.55 of a character width */
-        letter-spacing: -0.05ch !important; 
-    }
-
-    /* --- Force Pacman Bars to Match Length --- */
-    .pacman-bar {
-        font-family: 'JetBrains Mono', 'Courier New', monospace !important;
-        white-space: nowrap !important;
-        display: inline-block;
-        font-size: 0.65rem !important;
-        
-        /* THE FIX: Pin the blocks and dots into exact matching tracking grids */
-        letter-spacing: -0.12ch !important;
     }
 }
