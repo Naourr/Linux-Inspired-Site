@@ -71,11 +71,11 @@ export const mainPlaceholderTemplate = `
         </p>      
         <p class="social-links">
             <span class="ln-label">Social Links:</span>
-            <a href="#" target="_blank"><i class="ph ph-github-logo"></i> github</a> | 
-            <a href="#" target="_blank"><i class="ph ph-facebook-logo"></i> facebook</a> | 
-            <a href="#" target="_blank"><i class="ph ph-youtube-logo"></i> youtube</a> | 
-            <a href="#" target="_blank"><i class="ph ph-game-controller"></i> itch.io</a> | 
-            <a href="#" target="_blank"><i class="ph ph-discord-logo"></i> discord</a>
+            <a href="https://github.com/Naourr" target="_blank"><i class="ph ph-github-logo"></i> github</a> | 
+            <a href="https://www.facebook.com/princessmarielle.palmerodepalubos/" target="_blank"><i class="ph ph-facebook-logo"></i> facebook</a> | 
+            <a href="https://www.youtube.com/@Neighn" target="_blank"><i class="ph ph-youtube-logo"></i> youtube</a> | 
+            <a href="https://naour.itch.io/" target="_blank"><i class="ph ph-game-controller"></i> itch.io</a> | 
+            <a href="https://discord.com/users/1303947815827017810" target="_blank"><i class="ph ph-discord-logo"></i> discord</a>
         </p>
     </div>
 </div>
