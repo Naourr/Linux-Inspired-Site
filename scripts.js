@@ -148,3 +148,41 @@ function showInMainStage(project) {
 }
 showMainPlaceholder()
 showListPlaceholder()
+
+const elDate = document.getElementById('date');
+const elWeekday = document.getElementById('weekday');
+const elMonth = document.getElementById('month');
+const elDay = document.getElementById('day');
+const elHour = document.getElementById('hour');
+const elMinute = document.getElementById('minute');
+
+function setTextIfChanged(el, value) {
+    if (el && el.textContent !== value) {
+        el.textContent = value;
+    }
+}
+
+function updateClock() {
+    const now = new Date();
+    const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const weekday = weekdays[now.getDay()];
+    const month = months[now.getMonth()];
+    const day = now.getDate().toString();
+    const year = now.getFullYear();
+    let hour = now.getHours();
+    const minute = now.getMinutes().toString().padStart(2, '0');
+    const ampm = hour >= 12 ? 'PM' : 'AM';
+    hour = hour % 12 || 12;
+    const paddedHour = hour.toString().padStart(2, '0');
+    const fullTime = `${weekday}, ${month} ${day}, ${year}`;
+    setTextIfChanged(elDate, fullTime);
+    setTextIfChanged(elWeekday, weekday);
+    setTextIfChanged(elMonth, month);
+    setTextIfChanged(elDay, day);
+    setTextIfChanged(elHour, paddedHour);
+    setTextIfChanged(elMinute, minute);
+}
+updateClock()
+setInterval(updateClock, 10000);
