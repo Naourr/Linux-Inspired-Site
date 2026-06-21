@@ -88,7 +88,7 @@ export const mainPlaceholderTemplate = `
                 <span class="pkg-stats">5.7 MiB / 14.2 MiB (40%)</span>
             </div>
             <div class="pacman-bar-wrapper">
-                <span class="pacman-bar">[████████████████████c································]</span>
+                <span class="pacman-bar">[████████████████████c······························]</span>
             </div>
         </div>
         <div class="pacman-row">
@@ -97,7 +97,7 @@ export const mainPlaceholderTemplate = `
                 <span class="pkg-stats">2.9 MiB / 8.4 MiB (35%)</span>
             </div>
             <div class="pacman-bar-wrapper">
-                <span class="pacman-bar">[██████████████████c··································]</span>
+                <span class="pacman-bar">[██████████████████c································]</span>
             </div>
         </div>
         <div class="pacman-row">
@@ -106,7 +106,7 @@ export const mainPlaceholderTemplate = `
                 <span class="pkg-stats">36.0 MiB / 120.0 MiB (30%)</span>
             </div>
             <div class="pacman-bar-wrapper">
-                <span class="pacman-bar">[███████████████c·····································]</span>
+                <span class="pacman-bar">[███████████████c···································]</span>
             </div>
         </div>
         <div class="pacman-row">
@@ -115,7 +115,7 @@ export const mainPlaceholderTemplate = `
                 <span class="pkg-stats">7.0 MiB / 28.1 MiB (25%)</span>
             </div>
             <div class="pacman-bar-wrapper">
-                <span class="pacman-bar">[████████████c········································]</span>
+                <span class="pacman-bar">[████████████c······································]</span>
             </div>
         </div>
         <div class="pacman-row">
@@ -124,7 +124,7 @@ export const mainPlaceholderTemplate = `
                 <span class="pkg-stats">6.9 MiB / 34.7 MiB (20%)</span>
             </div>
             <div class="pacman-bar-wrapper">
-                <span class="pacman-bar">[██████████c··········································]</span>
+                <span class="pacman-bar">[██████████c········································]</span>
             </div>
         </div>
         <div class="pacman-row">
@@ -133,7 +133,7 @@ export const mainPlaceholderTemplate = `
                 <span class="pkg-stats">6.8 MiB / 45.8 MiB (15%)</span>
             </div>
             <div class="pacman-bar-wrapper">
-                <span class="pacman-bar">[███████c·············································]</span>
+                <span class="pacman-bar">[███████c···········································]</span>
             </div>
         </div>
     </div>
