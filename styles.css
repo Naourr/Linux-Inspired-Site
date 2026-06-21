@@ -348,7 +348,13 @@ iframe {
 pre.figlet {
     line-height: 1;
     font-size: 0.62rem;
+    font-family: 'JetBrains Mono', 'Courier New', monospace !important;
+    display: block;
+    white-space: pre;
+    font-variant-numeric: tabular-nums;
+    text-rendering: optimizeSpeed;
 }
+
 div:has(> .figlet) {
     flex-wrap: wrap;
     gap: 1.5rem;
@@ -407,13 +413,16 @@ div:has(> .figlet) {
     display: flex;
 }
 .pacman-bar {
-    font-family: 'Courier New', monospace;
-    white-space: nowrap;
     overflow: hidden;
     width: 100%;
-    display: block;
     letter-spacing: -1px;
+    font-family: 'JetBrains Mono', 'Courier New', monospace !important;
+    display: inline-block;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+    text-rendering: optimizeSpeed;
 }
+
 .terminal-list {
     list-style: none;
     padding-left: 0.5rem;
