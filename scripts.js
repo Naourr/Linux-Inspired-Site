@@ -173,8 +173,8 @@ function updateClock() {
     const year = now.getFullYear();
     let hour = now.getHours();
     const minute = now.getMinutes().toString().padStart(2, '0');
-    const ampm = hour >= 12 ? 'PM' : 'AM';
-    hour = hour % 12 || 12;
+    // const ampm = hour >= 12 ? 'PM' : 'AM';
+    // hour = hour % 12 || 12;
     const paddedHour = hour.toString().padStart(2, '0');
     const fullTime = `${weekday}, ${month} ${day}, ${year}`;
     setTextIfChanged(elDate, fullTime);
