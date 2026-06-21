@@ -126,6 +126,7 @@ nav img {
     height: fit-content;
     bottom: -100px;
     transition: bottom 0.3s ease;
+    z-index: 99;
 }
 .popup.active {
     bottom: 10px;
@@ -154,20 +155,20 @@ body:has(.dashboard.active) .clock {
     background: var(--transparent-black);
     padding: 3rem;
     border-radius: 20px;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
     transition: opacity 0.3s ease;
-    transform: translate(0, -1rem);
+    transform: translate(0, -30px);
     opacity: 1;
 }
 .clock #hour, .clock #minute {
-    font-size: 5rem;
+    font-size: 4rem;
 }
 .clock #day {
-    font-size: 1.4rem;
+    font-size: 1rem;
 }
 .clock #month, .clock #weekday {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }
 .desktop-icon {
     position: fixed;
@@ -178,7 +179,7 @@ body:has(.dashboard.active) .clock {
     gap: 5px;
     padding: 5px 8px;
     border-radius: 4px;
-    z-index: 99;
+    z-index: 98;
 }
 .desktop-icon:hover {
     background-color: var(--accent1);
