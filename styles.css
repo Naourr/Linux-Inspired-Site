@@ -4,17 +4,6 @@
     margin: 0;
     padding: 0;
 }
-body {
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    background-image: url(/assets/bg.gif);
-    background-size: cover;
-    background-position: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 400;
-    color: white;
-}
 :root {
     --transparent-black: rgba(0, 0, 0, 0.65);
     --transparent-gray: rgba(30, 30, 30, 0.65);
@@ -24,6 +13,20 @@ body {
     --accent2:  rgb(180, 69, 180);
     --accent3: rgb(145, 255, 255);
     --accent4: palevioletred;
+    --textcolor: white;
+    --bgcolor: black;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-image: url(/assets/bg.gif);
+    background-size: cover;
+    background-position: center;
+    background-color: var(--bgcolor);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 400;
+    color: var(--textcolor);
 }
 
 .row {
@@ -108,7 +111,7 @@ nav img {
 .loading {
     top: 0;
     left: 0;
-    background-color: black;
+    background-color: var(--bgcolor);
     height: 100%;
     width: 100%;
     opacity: 0;
@@ -179,7 +182,7 @@ body:has(.dashboard.active) .clock {
 }
 .desktop-icon:hover {
     background-color: var(--accent1);
-    color: black;
+    color: var(--bgcolor);
 }
 .desktop-icon:active {
     background-color: var(--accent3);
@@ -246,6 +249,21 @@ legend {
     text-align: center;
     margin-bottom: 2rem;
 }
+
+.wallpaper-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    overflow: hidden;
+}
+.wallpaper-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
 #main-stage h4 {
     padding-bottom: 2rem;
 }
@@ -283,7 +301,7 @@ iframe {
 }
 
 .c-black {
-    color: black;
+    color: var(--bgcolor);
 }
 .c-gray { 
     color: var(--dullgray);
@@ -301,7 +319,7 @@ iframe {
     color: var(--accent3); 
 }
 .c-white { 
-    color: white; 
+    color: var(--textcolor); 
 }
 
 .fastdetch-details i {
@@ -311,7 +329,7 @@ iframe {
 }
 .zsh {
     background-color: var(--accent1);
-    color: black;
+    color: var(--bgcolor);
     font-weight: 900;
 }
 .zsh + span {
@@ -343,7 +361,6 @@ div:has(> .figlet) {
 .bio-content {
     padding-left: 1rem;
     line-height: 1.6;
-    color: #e0e0e0;
 }
 .accent-intro {
     color: var(--accent3);
@@ -443,7 +460,7 @@ aside {
 }
 #list-stage > p:hover {
     background-color: var(--accent1);
-    color: black;
+    color: var(--bgcolor);
 }
 #list-stage > p:active {
     background-color: var(--accent3);
