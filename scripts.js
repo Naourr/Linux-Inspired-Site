@@ -40,6 +40,7 @@ const contents = {
         { name: "JS Snake", iframe_url: "https://snek-gaim.netlify.app/", url: "https://snek-gaim.netlify.app/" },
         { name: "JS Memory", iframe_url: "https://memory-gaim.netlify.app/", url: "https://memory-gaim.netlify.app/" },
         { name: "JS TicTacToe", iframe_url: "https://lickmytoe.netlify.app/", url: "https://lickmytoe.netlify.app/" },
+        { name: "JS 3D Flight", iframe_url: "https://3d-test-site.netlify.app/", url: "https://3d-test-site.netlify.app/" },
     ],
     guitar: [
         { name: "The Worst - Polyphia", iframe_url: "https://www.youtube.com/embed/L8wA4-maRWQ?si=XxF8BfgE78sXBWQe", url: "https://youtu.be/L8wA4-maRWQ?si=QD_nyHDOvxz0rKak", type: "video" },
