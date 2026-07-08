@@ -64,7 +64,8 @@ const contents = {
     wallpapers: [
         { name: "Pixel Art Gif", iframe_url: " ", url: "/assets/bg.gif", type: "wallpaper" },
         { name: "Jinx", iframe_url: " ", url: "/assets/bgjinx.jpg", type: "wallpaper" },
-        { name: "Tokyo Night", iframe_url: " ", url: "/assets/bgtokyo.png", type: "wallpaper" }
+        { name: "Tokyo Night", iframe_url: " ", url: "/assets/bgtokyo.png", type: "wallpaper" },
+        { name: "Eighty Six", iframe_url: " ", url: "/assets/eighty-six.jpg", type: "wallpaper" }
     ]
 }
 
