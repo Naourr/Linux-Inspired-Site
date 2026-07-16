@@ -30,8 +30,9 @@ const contents = {
         { name: "Trashy Quiz Site", iframe_url: "https://areyoupsychotic.netlify.app/", url: "https://areyoupsychotic.netlify.app/" },
     ],
     web_apps: [
-        { name: "Notes App", iframe_url: "https://js-write-notes.netlify.app/", url: "https://js-write-notes.netlify.app/" },
         { name: "Pink Calculator", iframe_url: "https://athing.netlify.app/", url: "https://athing.netlify.app/" },
+        { name: "Notes App", iframe_url: "https://js-write-notes.netlify.app/", url: "https://js-write-notes.netlify.app/" },
+        { name: "Sorting Algs Visualizer", iframe_url: "https://sorting-shi.netlify.app/", url: "https://sorting-shi.netlify.app/" },
     ],
     games: [
         { name: "RenPy VN (Collab)", iframe_url: "https://itch.io/embed-upload/13851253?color=190000", url: "https://naour.itch.io/i-am-the-problem" },
@@ -44,7 +45,7 @@ const contents = {
     ],
     guitar: [
         { name: "The Worst - Polyphia", iframe_url: "https://www.youtube.com/embed/L8wA4-maRWQ?si=XxF8BfgE78sXBWQe", url: "https://youtu.be/L8wA4-maRWQ?si=QD_nyHDOvxz0rKak", type: "video" },
-        { name: "Glimmer - Covet", iframe_url: "https://www.youtube.com/embed/1nRaKhhFCS0?si=GDnMbqLCVyY8qd7K", url: "https://youtu.be/1nRaKhhFCS0?si=GDnMbqLCVyY8qd7K", type: "video" },
+        { name: "Glimmer - Covet", iframe_url: "https://www.youtube.com/embed/7krI-Y6Wyso?si=rvVJ0D1iBQ32iqUk", url: "https://youtu.be/7krI-Y6Wyso?si=dw2ngKOLkkKWsoWU", type: "video" },
         { name: "Playing God - Polyphia", iframe_url: "https://www.youtube.com/embed/9GiQZgoF2ag?si=Gf96lT7MXZ_ofgNi", url: "https://youtu.be/9GiQZgoF2ag?si=Gf96lT7MXZ_ofgNi", type: "video" },
         { name: "ABC - Polyphia", iframe_url: "https://www.youtube.com/embed/wdWkg_7-STY?si=jEovoGQGwuO7vAqt", url: "https://youtu.be/wdWkg_7-STY?si=jEovoGQGwuO7vAqt", type: "video" },
         { name: "Let Her Go - Passenger", iframe_url: "https://www.youtube.com/embed/Kjg-cZNJqko?si=u7SFfHBjUDc7PkRS", url: "https://youtu.be/Kjg-cZNJqko?si=u7SFfHBjUDc7PkRS", type: "video" },
