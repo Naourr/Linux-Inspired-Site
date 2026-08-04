@@ -279,12 +279,15 @@ body:has(.dashboard.active) .desktop-icon:hover p {
 
 #typing-stage {
     width: calc(100% - 80px);
-    height: 100px;
+    height: 130px;
     flex-shrink: 0;
     flex-grow: 1;
     overflow: hidden;
     gap: 10px;
     padding: 1rem;
+    background-color: var(--dullgray);
+    border: none;
+    border-radius: 10px;
 }
 #chat-form {
     width: 100%;
@@ -323,7 +326,7 @@ body:has(.dashboard.active) .desktop-icon:hover p {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    background: var(--dullgray);
+    background: rgb(60, 60, 60);
     padding: 8px 12px;
     border-radius: 10px;
 }
@@ -355,7 +358,7 @@ body:has(.dashboard.active) .desktop-icon:hover p {
 }
 
 #chat-form button {
-    height: 70px;
+    height: 92px;
     padding: 0 16px;
     border-radius: 10px;
     border: none;
@@ -367,7 +370,9 @@ body:has(.dashboard.active) .desktop-icon:hover p {
 #chat-form button:active {
     background-color: var(--accent3);
 }
-
+textarea {
+    resize: none;
+}
 
 
 
