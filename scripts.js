@@ -17,10 +17,15 @@ nav_btn.forEach(btn => {
     })
 })
 
-const desktop_icon = document.querySelector('.desktop-icon')
-const dashboard = document.querySelector('.dashboard')
-desktop_icon.addEventListener('click', () => {
+const projects_icon = document.querySelector('.desktop-icon.projects')
+const dashboard = document.querySelector('.dashboard.projects')
+projects_icon.addEventListener('click', () => {
     dashboard.classList.toggle('active')
+})
+const chat_icon = document.querySelector('.desktop-icon.chat')
+const chat_dashboard = document.querySelector('.dashboard.chat')
+chat_icon.addEventListener('click', () => {
+    chat_dashboard.classList.toggle('active')
 })
 
 const contents = {
